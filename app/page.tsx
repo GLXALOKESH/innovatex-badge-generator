@@ -201,6 +201,7 @@ export default function BadgeGenerator() {
 
         {step === 1 && (
           <>
+          <img src="logo.png" alt="" className="mx-auto w-64 h-64 object-contain" />
             <label className="cursor-pointer">
               <input
                 type="file"
