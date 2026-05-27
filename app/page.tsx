@@ -3,6 +3,8 @@
 import React, { useRef, useState } from "react";
 
 export default function BadgeGenerator() {
+  const pixelifyFont = '"Pixelify Sans"';
+
   const [step, setStep] = useState(1);
 
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -149,7 +151,10 @@ export default function BadgeGenerator() {
 
     ctx.drawImage(frame, 0, 0);
 
-    ctx.font = "bold 170px Arial";
+    await document.fonts.load(`bold 170px ${pixelifyFont}`);
+    await document.fonts.load(`bold 115px ${pixelifyFont}`);
+
+    ctx.font = `bold 170px ${pixelifyFont}`;
 
     ctx.fillStyle = "#000";
 
@@ -162,7 +167,7 @@ export default function BadgeGenerator() {
       3330
     );
 
-    ctx.font = "bold 115px Arial";
+    ctx.font = `bold 115px ${pixelifyFont}`;
     ctx.textBaseline = "middle";
 
     ctx.fillText(
@@ -241,7 +246,7 @@ export default function BadgeGenerator() {
 
             <div 
               ref={containerRef}
-              className="relative w-full aspect-[3240/4050] overflow-hidden  border border-white/10 select-none bg-[#0a121d] cursor-move touch-none"
+              className="relative w-full aspect-3240/4050 overflow-hidden  border border-white/10 select-none bg-[#0a121d] cursor-move touch-none"
               style={{ containerType: "inline-size" }}
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
