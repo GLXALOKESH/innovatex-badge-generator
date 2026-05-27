@@ -201,7 +201,7 @@ export default function BadgeGenerator() {
 
         {step === 1 && (
           <>
-          <img src="logo.png" alt="" className="mx-auto w-48 h-48 object-contain" />
+            <img src="logo.png" alt="" className="mx-auto w-48 h-48 object-contain" />
             <label className="cursor-pointer">
               <input
                 type="file"
@@ -245,7 +245,7 @@ export default function BadgeGenerator() {
               Customize your badge
             </h2>
 
-            <div 
+            <div
               ref={containerRef}
               className="relative w-full aspect-3240/4050 overflow-hidden  border border-white/10 select-none bg-[#0a121d] cursor-move touch-none"
               style={{ containerType: "inline-size" }}
@@ -257,7 +257,7 @@ export default function BadgeGenerator() {
               onTouchMove={handleDragMove}
               onTouchEnd={handleDragEnd}
             >
-              <div 
+              <div
                 className="absolute overflow-hidden"
                 style={{
                   top: "29.136%",
@@ -278,10 +278,10 @@ export default function BadgeGenerator() {
                 )}
               </div>
 
-              <img 
-                src={FRAME_URL} 
-                alt="Frame Template" 
-                className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none" 
+              <img
+                src={FRAME_URL}
+                alt="Frame Template"
+                className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
               />
 
               {name && (
@@ -334,7 +334,7 @@ export default function BadgeGenerator() {
               <div className="flex justify-between items-center mb-2">
                 <span className="text-white/80 text-sm font-medium">Zoom Photo</span>
                 <div className="flex items-center space-x-3">
-                  <button 
+                  <button
                     onClick={resetImagePosition}
                     className="text-white/40 hover:text-white/80 text-xs transition"
                   >
@@ -373,12 +373,12 @@ export default function BadgeGenerator() {
 
             <div className="mt-5">
               <label className="text-white text-sm mb-2 block">
-                Designation
+                Role
               </label>
 
               <input
                 type="text"
-                placeholder="Enter designation"
+                placeholder="Enter your role"
                 value={designation}
                 onChange={(e) => setDesignation(e.target.value)}
                 className="w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-white outline-none"
@@ -412,7 +412,7 @@ export default function BadgeGenerator() {
               onClick={downloadBadge}
               className="mt-8 w-full rounded-full bg-white text-black font-semibold py-4 hover:scale-[1.02] transition"
             >
-              Download & Share
+              Download & Share 🎉
             </button>
           </>
         )}
